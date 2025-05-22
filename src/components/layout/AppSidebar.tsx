@@ -26,7 +26,8 @@ const menuItems = [
 
 export const AppSidebar = () => {
   const { user, logout } = useAuth();
-  const { collapsed } = useSidebar();
+  const sidebar = useSidebar();
+  const collapsed = sidebar.state === "collapsed";
 
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
     `w-full justify-start ${
